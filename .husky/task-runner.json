@@ -1,0 +1,23 @@
+{
+   "tasks": [
+      {
+        "name": "dotnet-format-staged-files",
+        "group": "pre-commit",
+        "command": "dotnet",
+        "args": ["format", "--include", "${staged}"],
+        "include": ["**/*.cs"]
+      },
+     {
+       "name": "dotnet-build-solution",
+       "group": "pre-commit",
+       "command": "dotnet",
+       "args": ["build", "--no-restore"]
+     },
+     {
+       "name": "dotnet-run-tests",
+       "group": "pre-commit",
+       "command": "dotnet",
+       "args": ["test", "--no-restore", "--no-build"]
+     }
+   ]
+}
