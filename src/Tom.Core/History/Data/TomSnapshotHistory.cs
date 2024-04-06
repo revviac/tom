@@ -1,10 +1,10 @@
-using System.Collections;
 using System.Text.Json;
 using OneOf;
 using Tom.Core.Errors;
+using Tom.Core.History.Options;
 using Tom.Core.Tags;
 
-namespace Tom.Core.History;
+namespace Tom.Core.History.Data;
 
 using static TagTypeValidator;
 

@@ -1,4 +1,4 @@
-namespace Tom.Core.History;
+namespace Tom.Core.History.Options;
 
 /// <summary>
 ///     Describes how the value of a bucket with multiple

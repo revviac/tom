@@ -1,4 +1,4 @@
-namespace Tom.Core.History;
+namespace Tom.Core.History.Options;
 
 public record HistoryResamplingOptions
 {

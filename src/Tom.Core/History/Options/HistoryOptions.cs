@@ -1,4 +1,4 @@
-namespace Tom.Core.History;
+namespace Tom.Core.History.Options;
 
 /// <summary>
 ///     Describes the resulting history shape

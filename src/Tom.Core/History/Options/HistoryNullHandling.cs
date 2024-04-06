@@ -1,4 +1,4 @@
-namespace Tom.Core.History;
+namespace Tom.Core.History.Options;
 
 /// <summary>
 ///     Describes how null values should be handled when encountered during history retrieval

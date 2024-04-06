@@ -1,4 +1,4 @@
-namespace Tom.Core.History;
+namespace Tom.Core.History.Data;
 
 /// <summary>
 ///     Represents a data point of a history snapshot

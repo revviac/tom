@@ -2,6 +2,8 @@ using OneOf;
 using OneOf.Types;
 using Tom.Core.Errors;
 using Tom.Core.Exceptions;
+using Tom.Core.History.Data;
+using Tom.Core.History.Options;
 using Tom.Core.Tags;
 
 namespace Tom.Core.History;
