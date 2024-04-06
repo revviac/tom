@@ -1,6 +1,6 @@
 using Tom.Core.Tags;
 
-namespace Test.Core;
+namespace Test.Core.Tags;
 
 /// <summary>
 ///     Sanity checks for AccessMode flags
