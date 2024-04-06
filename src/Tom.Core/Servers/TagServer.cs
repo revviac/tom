@@ -37,6 +37,11 @@ public class TagServer
     public string Address { get; set; } = "";
 
     /// <summary>
+    ///     Friendly name for the server that can be passed to the user
+    /// </summary>
+    public string FriendlyName { get; set; } = "";
+
+    /// <summary>
     ///     Server type
     /// </summary>
     public required ServerType Type { get; init; }
