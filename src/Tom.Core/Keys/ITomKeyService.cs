@@ -55,7 +55,9 @@ public interface ITomKeyService
     /// <returns>
     /// Snapshot of a key belonging to the user object. On any error, it is returned instead
     /// </returns>
-    Task<OneOf<TomSnapshot, TomObjectNotFound, TomKeyNameInvalid, TomKeyNotFound, TomKeyTypeIncompatible>> ReadKeyValue(
+    Task<
+        OneOf<TomSnapshot, TomObjectNotFound, TomKeyNameInvalid, TomKeyNotFound, TomKeyTypeIncompatible, TomKeyAccessModeViolated>
+    > ReadKeyValue(
         Guid userId,
         Guid objectId,
         string keyName,
@@ -89,7 +91,9 @@ public interface ITomKeyService
     /// <param name="cancellationToken">Cancellation token</param>
     /// <typeparam name="T">Value type that will be used to check key type compatibility</typeparam>
     /// <returns>Success if the operation is successful, otherwise an error is returned</returns>
-    Task<OneOf<Success, TomObjectNotFound, TomKeyNameInvalid, TomKeyNotFound, TomKeyTypeIncompatible>> UpdateValue<T>(
+    Task<
+        OneOf<Success, TomObjectNotFound, TomKeyNameInvalid, TomKeyNotFound, TomKeyTypeIncompatible, TomKeyAccessModeViolated>
+    > UpdateValue<T>(
         Guid userId,
         Guid objectId,
         string keyName,
