@@ -1,7 +1,6 @@
 using OneOf;
 using OneOf.Types;
 using Tom.Core.Errors;
-using Tom.Core.History;
 using Tom.Core.History.Data;
 using Tom.Core.Tags;
 
@@ -94,6 +93,23 @@ public interface ITomKeyService
         Guid objectId,
         string keyName,
         T value,
+        CancellationToken cancellationToken
+    );
+
+    /// <summary>
+    ///     Changes the tag that the key is connected to
+    /// </summary>
+    /// <param name="userId">User id</param>
+    /// <param name="objectId">Id of an object among user resources</param>
+    /// <param name="keyName">Key name</param>
+    /// <param name="newTag">Tag that should be used by the key</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success if the operation is successful, otherwise an error is returned</returns>
+    Task<OneOf<Success, TomObjectNotFound, TomKeyNameInvalid, TomKeyNotFound, TomKeyTypeIncompatible>> ChangeTag(
+        Guid userId,
+        Guid objectId,
+        string keyName,
+        Tag newTag,
         CancellationToken cancellationToken
     );
 }
