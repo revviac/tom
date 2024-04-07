@@ -1,6 +1,7 @@
 using OneOf;
 using OneOf.Types;
 using Tom.Core.History.Data;
+using Tom.Core.History.Options;
 using Tom.Core.Keys.Errors;
 using Tom.Core.Objects.Errors;
 using Tom.Core.Tags;
@@ -70,6 +71,7 @@ public interface ITomKeyService
     /// <param name="userId">User id</param>
     /// <param name="objectId">Id of an object among user resources</param>
     /// <param name="keyName">Key name</param>
+    /// <param name="options">History options</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>
     /// Snapshot of a key belonging to the user object. On any error, it is returned instead
@@ -78,6 +80,7 @@ public interface ITomKeyService
         Guid userId,
         Guid objectId,
         string keyName,
+        HistoryOptions options,
         CancellationToken cancellationToken
     );
 
