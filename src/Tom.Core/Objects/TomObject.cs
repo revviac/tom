@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Tom.Core.Keys;
+using Tom.Core.Objects.Commands;
 
 namespace Tom.Core.Objects;
 
@@ -26,8 +27,23 @@ public class TomObject
     public required DateTimeOffset CreatedAt { get; init; }
 
     /// <summary>
+    ///     Friendly name of the object
+    /// </summary>
+    public required string FriendlyName { get; set; }
+
+    /// <summary>
     ///     A collection of keys that represent the object
     /// </summary>
     [MinLength(1)]
     public required List<TomKey> Keys { get; init; }
+
+    /// <summary>
+    ///     Updates object information with values from the command
+    /// </summary>
+    /// <param name="command">Values to update the object information with</param>
+    public void Update(UpdateTomObjectCommand command)
+    {
+        if (command.FriendlyName != null)
+            FriendlyName = command.FriendlyName;
+    }
 }
