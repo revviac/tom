@@ -1,10 +1,10 @@
 using OneOf;
 using OneOf.Types;
-using Tom.Core.Errors;
 using Tom.Core.Exceptions;
 using Tom.Core.History.Data;
 using Tom.Core.History.Options;
 using Tom.Core.Tags;
+using Tom.Core.Tags.Errors;
 
 namespace Tom.Core.History;
 

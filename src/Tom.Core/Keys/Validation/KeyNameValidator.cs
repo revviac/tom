@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using OneOf;
 using OneOf.Types;
-using Tom.Core.Errors;
+using Tom.Core.Keys.Errors;
 
 namespace Tom.Core.Keys.Validation;
 

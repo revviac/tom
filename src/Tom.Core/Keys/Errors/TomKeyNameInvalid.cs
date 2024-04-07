@@ -1,3 +1,3 @@
-namespace Tom.Core.Errors;
+namespace Tom.Core.Keys.Errors;
 
 public record TomKeyNameInvalid(string Name, string Reason = "");

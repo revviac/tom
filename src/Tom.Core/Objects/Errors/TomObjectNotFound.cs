@@ -1,3 +1,3 @@
-namespace Tom.Core.Errors;
+namespace Tom.Core.Objects.Errors;
 
 public record TomObjectNotFound(Guid ObjectId);

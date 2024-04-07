@@ -1,7 +1,7 @@
 using System.Text.Json;
 using OneOf;
-using Tom.Core.Errors;
 using Tom.Core.Tags;
+using Tom.Core.Tags.Errors;
 
 namespace Tom.Core.History.Data;
 

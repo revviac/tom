@@ -1,7 +1,8 @@
 using OneOf;
 using OneOf.Types;
-using Tom.Core.Errors;
 using Tom.Core.History.Data;
+using Tom.Core.Keys.Errors;
+using Tom.Core.Objects.Errors;
 using Tom.Core.Tags;
 
 namespace Tom.Core.Keys;
