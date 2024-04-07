@@ -1,4 +1,5 @@
 using Tom.Core.Servers;
+using Tom.Core.Tags.Commands;
 
 namespace Tom.Core.Tags;
 
@@ -18,9 +19,11 @@ public class Tag
     {
         Id = id,
         TagServer = TagServer.GetStub(),
-        TagAddress = "",
+        Address = "",
         Type = type,
-        Mode = AccessMode.ReadWrite
+        Mode = AccessMode.ReadWrite,
+        CreatedAt = DateTimeOffset.UtcNow,
+        FriendlyName = "Stub tag"
     };
 
     /// <summary>
@@ -37,19 +40,29 @@ public class Tag
     public required Guid Id { get; init; }
 
     /// <summary>
+    ///     Time the tag was created at
+    /// </summary>
+    public required DateTimeOffset CreatedAt { get; init; }
+
+    /// <summary>
+    ///     Friendly name of the tag
+    /// </summary>
+    public required string FriendlyName { get; set; }
+
+    /// <summary>
     ///     Server that the tag is connected to
     /// </summary>
     public required TagServer TagServer { get; set; }
 
     /// <summary>
-    ///     Tag address on the server
+    ///     Tag address on the tag server
     /// </summary>
-    public required string TagAddress { get; set; }
+    public required string Address { get; set; }
 
     /// <summary>
     ///     Tag type
     /// </summary>
-    public required TagType Type { get; init; }
+    public required TagType Type { get; set; }
 
     /// <summary>
     ///     Tag access mode
@@ -59,10 +72,25 @@ public class Tag
     /// <summary>
     ///     Whether the tag is a stub tag, meaning its value lies in cache
     /// </summary>
-    public bool IsStub => TagAddress is "" && TagServer.Address is "";
+    public bool IsStub => Address is "" && TagServer.Address is "";
 
     /// <summary>
     ///     Tag server id
     /// </summary>
     public Guid ServerId { get; set; } = default;
+
+    public void Update(UpdateTagCommand command)
+    {
+        if (command.Address != null)
+            Address = command.Address;
+
+        if (command.FriendlyName != null)
+            FriendlyName = command.FriendlyName;
+
+        if (command.Type != null)
+            Type = command.Type.Value;
+
+        if (command.Mode != null)
+            Mode = command.Mode.Value;
+    }
 }
